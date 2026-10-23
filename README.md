@@ -21,13 +21,14 @@ PING   # -> PONG
 | File | Covers |
 | --- | --- |
 | [redis-interview-1.md](./redis-interview-1.md) | Basics, Strings, Lists, Hashes, Sets, Sorted Sets, key listing (KEYS vs SCAN), Redis JSON, Streams, common mistakes, interview answers |
+| [redis-interview-2.md](./redis-interview-2.md) | Redis JSON, Streams and consumer groups (with practice output), Persistence (RDB vs AOF), Docker persistence gotchas, interview answers |
 
 ## Progress
 
 **Pace:** 3–4 focused hours a day, about 7–8 days in total.
 
 - [x] **Day 1:** Redis basics, Docker setup, expiry, atomic counters, and all 5 core data types
-- [ ] **Day 2:** Redis JSON ✅, Streams and consumer groups (practice pending), Persistence (RDB vs AOF)
+- [x] **Day 2:** Redis JSON, Streams and consumer groups, Persistence (RDB vs AOF)
 - [ ] **Day 3:** Caching patterns, eviction policies, Node.js integration
 - [ ] **Day 4:** Pub/Sub, queues, transactions, Lua scripts
 - [ ] **Day 5:** Security (ACL), replication, Sentinel
@@ -47,6 +48,7 @@ PING   # -> PONG
 - **Atomicity:** commands like `INCR` and `HINCRBY` update data in one step, which avoids race conditions.
 - **Right data type for the job:** Hash for flat objects, JSON for nested data, Sorted Set for rankings, Stream for reliable event processing.
 - **Production safety:** use `SCAN` instead of `KEYS`; Redis data is in RAM and needs persistence.
+- **Persistence:** RDB snapshots plus AOF write log, both on in production, with a Docker volume so data survives `docker rm`.
 
 ## Resources
 
